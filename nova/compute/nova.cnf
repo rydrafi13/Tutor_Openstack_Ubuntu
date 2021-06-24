@@ -1,6 +1,6 @@
 [DEFAULT]
 # define own IP address
-my_ip = {ip_address_controller}
+my_ip = {ip_address_compute}
 state_path = /var/lib/nova
 enabled_apis = osapi_compute,metadata
 log_dir = /var/log/nova
