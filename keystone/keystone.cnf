@@ -1,0 +1,9 @@
+# line 440
+memcache_servers = controller:11211
+
+# line 598
+[database]
+connection = mysql+pymysql://keystone:password@controller/keystone
+
+# line 2512
+provider = fernet
