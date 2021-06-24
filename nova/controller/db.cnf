@@ -1,0 +1,23 @@
+# Note: untuk 'password' bisa custom dengan password temen"
+
+create database nova;
+grant all privileges on nova.* to nova@'localhost' identified by 'password';
+grant all privileges on nova.* to nova@'%' identified by 'password';
+flush privileges;
+
+create database nova_api;
+grant all privileges on nova_api.* to nova@'localhost' identified by 'password';
+grant all privileges on nova_api.* to nova@'%' identified by 'password';
+flush privileges;
+
+create database nova_cell0;
+grant all privileges on nova_cell0.* to nova@'localhost' identified by 'password';
+grant all privileges on nova_cell0.* to nova@'%' identified by 'password';
+flush privileges;
+exit
+
+create database placement;
+grant all privileges on placement.* to placement@'localhost' identified by
+'password';
+grant all privileges on placement.* to placement@'%' identified by 'password';
+flush privileges;
