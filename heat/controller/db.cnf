@@ -1,0 +1,7 @@
+# Note: untuk 'password' bisa custom dengan password temen"
+
+create database heat;
+grant all privileges on heat.* to heat@'localhost' identified by 'password';
+grant all privileges on heat.* to heat@'%' identified by 'password';
+flush privileges;
+exit
