@@ -1,0 +1,28 @@
+[DEFAULT]
+log_dir = /var/log/gnocchi
+
+[api]
+auth_mode = keystone
+
+[database]
+backend = sqlalchemy
+
+# MariaDB connection info
+[indexer]
+url = mysql+pymysql://gnocchi:password@controller/gnocchi
+[storage]
+driver = file
+file_basepath = /var/lib/gnocchi
+
+# Keystone auth info
+[keystone_authtoken]
+www_authenticate_uri = http://controller:5000
+auth_url = http://controller:5000
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = gnocchi
+password = gnocchi_password
+service_token_roles_required = tru

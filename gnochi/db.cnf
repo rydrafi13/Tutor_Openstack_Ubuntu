@@ -1,0 +1,7 @@
+# Note: untuk 'password' bisa custom dengan password temen"
+
+create database gnocchi;
+grant all privileges on gnocchi.* to gnocchi@'localhost' identified by 'password';
+grant all privileges on gnocchi.* to gnocchi@'%' identified by 'password';
+flush privileges;
+exit
