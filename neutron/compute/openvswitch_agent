@@ -1,0 +1,11 @@
+[securitygroup]
+firewall_driver = openvswitch
+enable_security_group = true
+enable_ipset = true
+
+[agent]
+tunnel_types = vxlan
+prevent_arp_spoofing = True
+
+[ovs]
+local_ip = { ip_address_compute }

@@ -1,0 +1,20 @@
+tambahkan dibawah lock_path = $state_path/tmp
+
+#neutron
+use_neutron = True
+linuxnet_interface_driver = nova.network.linux_net.LinuxOVSInterfaceDriver
+firewall_driver = nova.virt.firewall.NoopFirewallDriver
+
+tambahkan dibawah api_paste_config = /etc/nova/api-paste.ini
+
+[neutron]
+auth_url = http://controller:5000
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+region_name = RegionOne
+project_name = service
+username = neutron
+password = neutron_password
+service_metadata_proxy = True
+metadata_proxy_shared_secret = metadata_secret

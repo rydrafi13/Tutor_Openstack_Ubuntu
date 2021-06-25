@@ -1,0 +1,11 @@
+# line 21
+interface_driver = openvswitch
+
+# line 43
+dhcp_driver = neutron.agent.linux.dhcp.Dnsmasq
+
+# line 52
+enable_isolated_metadata = true
+
+line 85
+dnsmasq_config_file = /etc/neutron/dnsmasq-neutron.conf

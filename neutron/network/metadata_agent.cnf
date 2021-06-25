@@ -1,0 +1,8 @@
+# line 22
+nova_metadata_host = controller
+
+# line 34
+metadata_proxy_shared_secret = metadata_secret
+
+# line 307
+memcache_servers = controller:11211

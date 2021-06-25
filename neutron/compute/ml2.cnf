@@ -1,0 +1,15 @@
+# Note: Untuk nama flat_networks itu bisa dicustom tidak harus provider
+
+# line 154
+
+[ml2]
+type_drivers = flat,vlan,gre,vxlan
+tenant_network_types = vxlan
+mechanism_drivers = openvswitch
+extension_drivers = port_security
+
+# line 206
+flat_networks = provider
+
+# line 259
+vni_ranges = 1:1000

@@ -1,0 +1,14 @@
+# Note: untuk bridge_mappings menyesuaikan dengan nama flat_networks dan nama bridge openvswitch
+
+[securitygroup]
+firewall_driver = openvswitch
+enable_security_group = true
+enable_ipset = true
+
+[agent]
+tunnel_types = vxlan
+prevent_arp_spoofing = True
+
+[ovs]
+local_ip = { ip_address_network }
+bridge_mappings = provider:br-ens192
