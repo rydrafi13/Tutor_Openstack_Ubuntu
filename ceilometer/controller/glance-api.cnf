@@ -1,0 +1,6 @@
+dibagian paling akhir tambahkan
+
+[oslo_messaging_notifications]
+driver = messagingv2
+# RabbitMQ connection info
+transport_url = rabbit://openstack:rabbit_password@controller

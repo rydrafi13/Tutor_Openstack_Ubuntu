@@ -1,0 +1,32 @@
+[DEFAULT]
+# RabbitMQ connection info
+transport_url = rabbit://openstack:rabbit_password@controller
+
+[api]
+auth_mode = keystone
+
+[dispatcher_gnocchi]
+filter_service_activity = False
+
+# Keystone auth info (with gnocchi user)
+[keystone_authtoken]
+www_authenticate_uri = http://controller:5000
+auth_url = http://controller:5000
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = gnocchi
+password = gnocchi_password
+
+# Keystone auth info (with ceilometer user)
+[service_credentials]
+auth_url = http://controller:5000
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = ceilometer
+password = ceilometer_password
