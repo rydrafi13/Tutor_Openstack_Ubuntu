@@ -1,0 +1,4 @@
+# default is [rule:system_admin_api], so only admin users can access
+{
+"os_compute_api:os-extended-server-attributes": "rule:admin_or_owner",
+}

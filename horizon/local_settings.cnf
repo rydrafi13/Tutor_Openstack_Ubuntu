@@ -1,0 +1,18 @@
+# line 99
+CACHES = {
+'default': {
+'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+'LOCATION': '192.168.100.99:11211',
+},
+}
+# line 113
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+# line 126
+OPENSTACK_HOST = "192.168.100.99"
+# line 127
+OPENSTACK_KEYSTONE_URL = "http://192.168.100.99:5000/v3"
+# line 131
+TIME_ZONE = "Asia/Jakarta"
+# add to end
+OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = True
+OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
