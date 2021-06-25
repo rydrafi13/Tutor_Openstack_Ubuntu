@@ -1,0 +1,46 @@
+pid file = /var/run/rsyncd.pid
+log file = /var/log/rsyncd.log
+uid = swift
+gid = swift
+
+# specify the IP address of each storage node
+address = { ip_address_swift }
+
+[account]
+path = /srv/node
+read only = false
+write only = no
+list = yes
+incoming chmod = 0644
+outgoing chmod = 0644
+max connections = 25
+lock file = /var/lock/account.lock
+
+[container]
+path = /srv/node
+read only = false
+write only = no
+list = yes
+incoming chmod = 0644
+outgoing chmod = 0644
+max connections = 25
+lock file = /var/lock/container.lock
+
+[object]
+path = /srv/node
+read only = false
+write only = no
+list = yes
+incoming chmod = 0644
+max connections = 25
+lock file = /var/lock/object.lock
+
+[swift_server]
+path = /etc/swift
+read only = true
+write only = no
+list = yes
+incoming chmod = 0644
+outgoing chmod = 0644
+max connections = 5
+lock file = /var/lock/swift_server.lock

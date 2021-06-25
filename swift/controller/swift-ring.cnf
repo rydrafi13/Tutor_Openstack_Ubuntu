@@ -1,0 +1,45 @@
+# Account Ring
+
+swift-ring-builder /etc/swift/account.builder create 12 3 1
+
+swift-ring-builder /etc/swift/account.builder add r0z0-swift1:6002/sdb 100
+swift-ring-builder /etc/swift/account.builder add r0z0-swift1:6002/sdc 100
+
+swift-ring-builder /etc/swift/account.builder add r1z1-swift2:6002/sdb 100
+swift-ring-builder /etc/swift/account.builder add r1z1-swift2:6002/sdc 100
+
+swift-ring-builder /etc/swift/account.builder rebalance
+
+# Container Ring
+
+swift-ring-builder /etc/swift/container.builder create 12 3 1
+
+swift-ring-builder /etc/swift/container.builder add r0z0-swift1:6001/sdb 100
+swift-ring-builder /etc/swift/container.builder add r0z0-swift1:6001/sdc 100
+
+swift-ring-builder /etc/swift/container.builder add r1z1-swift2:6001/sdb 100
+swift-ring-builder /etc/swift/container.builder add r1z1-swift2:6001/sdc 100
+
+swift-ring-builder /etc/swift/container.builder rebalance
+
+# Object Ring
+
+swift-ring-builder /etc/swift/object.builder create 12 3 1
+
+swift-ring-builder /etc/swift/object.builder add r0z0-swift1:6000/sdb 100
+swift-ring-builder /etc/swift/object.builder add r0z0-swift1:6000/sdc 100
+
+swift-ring-builder /etc/swift/object.builder add r1z1-swift2:6000/sdb 100
+swift-ring-builder /etc/swift/object.builder add r1z1-swift2:6000/sdc 100
+
+swift-ring-builder /etc/swift/object.builder rebalance
+
+swift-ring-builder account.builder
+
+swift-ring-builder container.builder
+
+swift-ring-builder object.builder
+
+chown swift. /etc/swift/*.gz
+
+systemctl restart swift-proxy
