@@ -1,0 +1,7 @@
+# Note: untuk 'password' bisa custom dengan password temen"
+
+create database cinder;
+grant all privileges on cinder.* to cinder@'localhost' identified by 'password';
+grant all privileges on cinder.* to cinder@'%' identified by 'password';
+flush privileges;
+exit;
